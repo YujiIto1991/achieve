@@ -7,7 +7,6 @@ class ContactsController < ApplicationController
     end
   end
   
-
   def create
     @contact = Contact.new(contacts_params)
     if @contact.save
