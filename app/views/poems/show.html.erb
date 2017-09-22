@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <h1>ポエム詳細</h1>
+    <div class="row">
+        <div><%= @poems.attributes['title'] %></div>
+        <div><%= @poems.attributes['content'] %></div>
+        <div><%= @poems.attributes['author'] %></div>
+    </div>
+    <%= link_to "ポエム一覧画面にもどる", poems_path %>
+  </div>
+</div>

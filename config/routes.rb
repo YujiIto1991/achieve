@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
-  
+  resources :poems, only: [:index, :show]
   resources :contacts, only: [:new, :create] do
   collection do
       post :confirm
