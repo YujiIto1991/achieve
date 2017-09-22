@@ -26,3 +26,79 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+---
+FaceBook
+- アプリドメインの設定ができない
+http://qiita.com/lasershow/items/774ad43cd8a0f1bc09ec
+http://qiita.com/seisonshi/items/6d1e00072fb624250d82
+- SiteURL未設定
+
+-アプリドメインとSiteURLを両方入力してから設定を保存する
+
+- Dev,Productionどっちもやること
+
+achieve-development
+ID:2021314834755379
+appSecret:6ef4da4d2ae0026c4339e9e37436ae91
+
+achieve-production
+ID:129075807740711
+appSecret:a18b591f36d8cd8bb36a723cb1333e66
+---
+Twitter
+[achieve_yuji91_development]
+Consumer Key (API Key)	
+y7GOI02dxXcRxQ9a5LkPPUXBd
+
+Consumer Secret (API Secret)
+yKAnyd9QlOkHWzBwW1PBooGnnN8o6dO9TJpHT5PGtsF8X6Mww7
+
+[achieve_yuji91_production]
+Consumer Key (API Key)
+us8WKIAw42xObeQclewkKsQ5V
+
+Consumer Secret (API Secret)
+N9yD3ZLhW3YsV3lSneSHhjwogeBGLLHaAdDxvwoQOOJ250ckRy
+
+---
+[.env]
+FACEBOOK_ID_DEVELOPMENT=2021314834755379
+FACEBOOK_SECRET_DEVELOPMENT=6ef4da4d2ae0026c4339e9e37436ae91
+TWITTER_ID_DEVELOPMENT=y7GOI02dxXcRxQ9a5LkPPUXBd
+TWITTER_SECRET_DEVELOPMENT=yKAnyd9QlOkHWzBwW1PBooGnnN8o6dO9TJpHT5PGtsF8X6Mww7
+
+[Command]
+heroku config:add FACEBOOK_ID_PRODUCTION=129075807740711
+heroku config:add FACEBOOK_SECRET_PRODUCTION=a18b591f36d8cd8bb36a723cb1333e66
+heroku config:add TWITTER_ID_PRODUCTION=us8WKIAw42xObeQclewkKsQ5V
+heroku config:add TWITTER_SECRET_PRODUCTION=N9yD3ZLhW3YsV3lSneSHhjwogeBGLLHaAdDxvwoQOOJ250ckRy
+
+rails g migration AddOmniauthColumnsToUsers uid provider image_url
+edit config/db/migrate
+rake db:migrate:reset
+
+test@testmail.com
+test010101
+<a href="http://localhost:3000/users/confirmation?confirmation_token=-N_h1QragKV76PfBxJJ_"
+下に置き換える
+https://ide.c9.io/yuji911227/dive-into-code/users/confirmation?confirmation_token=-N_h1QragKV76PfBxJJ_
+
+---
+SNSログインから取得してきた画像を表示させるヘルパーメソッドを作成しましょう。
+$ brew update
+$ brew install imagemagick
+
+---
+heroku pg:reset DATABASE
+http://qiita.com/quattro_4/items/a2eb3618207e21ca00d3
+http://webos-goodies.jp/archives/how_to_use_activeresource_2.html
+http://blog.mmmcorp.co.jp/blog/2014/10/30/active-resourrce-patch/
+
+gem her
+http://dev.classmethod.jp/server-side/ruby-on-rails/her-1/
+
+AJAX
+https://qiita.com/hisamura333/items/e3ea6ae549eb09b7efb9
+
+名言
+http://estorypost.com/%E5%90%8D%E8%A8%80%E3%83%BB%E6%A0%BC%E8%A8%80/mahatma-gandhi-quotes/
