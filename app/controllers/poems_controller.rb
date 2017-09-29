@@ -12,7 +12,6 @@ class PoemsController < ApplicationController
       #@poems = Poem.find(params[:id]) 
       
       #ActiveResource
-      #TODO ボタンを押したid以外のデータも取得してしまう
       #@poems = Poem.find(:all, :params => {:poem_id => params[:id]})
       @poems = Poem.find(params[:id])
   end

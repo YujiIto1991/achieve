@@ -102,3 +102,34 @@ https://qiita.com/hisamura333/items/e3ea6ae549eb09b7efb9
 
 名言
 http://estorypost.com/%E5%90%8D%E8%A8%80%E3%83%BB%E6%A0%BC%E8%A8%80/mahatma-gandhi-quotes/
+-----------------------------------------------------
+Ajax
+
+[View]
+<p>コメント一覧</p>
+<div id="comments_area">
+<%= render partial: 'comments/index',
+    locals:  { comments: @comments, blog: @blog } %>
+</div>
+
+--> @commentsと@blogがあれば表示できる
+--> blog has_many commentsより、@comments = @blog.commentsで取得可能
+--> @blogさえあれば良い
+
+-----------------------------------------------------
+[Javascript]
+
+[訂正前]
+$("#comments_area").html("<%= j(
+render 'comments/index', 
+{ comments: @comment.blog.comments, 
+      blog: @comment.blog }) %>")
+--> @commentからcommentとblogの内容を取得している
+--> destroyActionではcommentが０件の場合commentがNilになる
+--> commentではなくblogでViewに情報を渡すべき
+
+[訂正後]
+$("#comments_area").html("<%= j(
+render 'comments/index', 
+{ comments: @blog.comments, 
+      blog: @blog }) %>")
