@@ -18,16 +18,10 @@ class CommentsController < ApplicationController
   end
   
   def destroy
-    #binding.pry
-    #@comment = current_user.comments
     @blog = Blog.find(params[:blog_id])
     @comment = @blog.comments
-    #@comment = @blog.comments.build
-    #@comments = @blog.comments
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
-      #@Comment = Comment.find(params[:id])
-      #@blog = Blog.find(@Comment.blog_id)
       if Comment.find(params[:id]).destroy
         format.html { redirect_to blog_path(@blog), notice: 'コメントを削除しました。' }
         format.js { render :index }
