@@ -15,6 +15,14 @@ class CommentsController < ApplicationController
   end
   
   def edit
+    @comment = Comment.find(params[:id])
+  end
+  
+  def update
+    @comment = Comment.find(params[:id])
+    @comment.update(comment_params)
+    @blog = Blog.find(params[:blog_id])
+    redirect_to blog_path(@blog)
   end
   
   def destroy
