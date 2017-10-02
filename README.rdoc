@@ -137,3 +137,7 @@ render 'comments/index',
 
 ----------------------------------------------------------
 develop環境だとTwitter認証で401エラー
+https://qiita.com/hirokishirai/items/5a43977a38ecd922bfb9
+
+RailsErrorRemember
+https://qiita.com/jun910/items/74dd71debc1edf566111
