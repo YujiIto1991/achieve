@@ -139,5 +139,34 @@ render 'comments/index',
 develop環境だとTwitter認証で401エラー
 https://qiita.com/hirokishirai/items/5a43977a38ecd922bfb9
 
+no_imageが表示されない
+
 RailsErrorRemember
 https://qiita.com/jun910/items/74dd71debc1edf566111
+----------------------------------------------------------
+[Achieve_20171004-development]
+app_id = "409655"
+key = "47ce7d11231c6c73c38e"
+secret = "f609d4b15f7091b54d8d"
+cluster = "ap1"
+
+[Achieve_20171004-staging]
+app_id = "409656"
+key = "5df0babb4827355462ea"
+secret = "17a1a3b5da0fa47abca2"
+cluster = "ap1"
+
+[Achieve_20171004-production]
+app_id = "409657"
+key = "4571206a3b768c1583a7"
+secret = "d487e709be2b29dfb0d8"
+cluster = "ap1"
+----------------------------------------------------------
+DIVE19_2_通知機能
+これで、通知をリアルタイムに作成することができました。
+Notification, Pusherに関する設定は以上です。デザインは各自整えて頂いて大丈夫です。
+少し難しいですが、おさらいすると以下のような内容になります。何回も読み返して理解しましょう。
+
+Herokuでの設定
+
+今までの要約が記載されていない

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'notifications/index'
+
   get 'relationships/create'
   get 'relationships/destroy'
 
@@ -14,6 +16,10 @@ Rails.application.routes.draw do
     
   }
   resources :users, only: [:index, :show]
+  
+  resources :conversations do
+    resources :messages
+  end
   
   resources :relationships, only: [:create, :destroy]
   resources :blogs do
