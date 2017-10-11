@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         #TODO:通知に関しての処理をModelに記載する
+        #TODO:通知が保存されない
         unless @comment.blog.user_id == current_user.id
           Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'comment_created', {
             message: 'あなたの作成したブログにコメントが付きました'
