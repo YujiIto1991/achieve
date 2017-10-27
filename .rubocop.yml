@@ -1,0 +1,23 @@
+Rails:
+  Enabled: true
+
+# 日本語のコメントを許可する
+Style/AsciiComments:
+  Enabled: false
+
+  # do .. end から更にメソッドチェーンすると見づらいので
+  # # auto-correct せず、自分で修正する
+  # # spec 内は見た目が綺麗になるので許可
+  # Style/BlockDelimiters:
+  #   AutoCorrect: false
+  #     Exclude:
+  #         - "spec/**/*"
+
+# ドキュメントの無い public class を許可する
+Style/Documentation:
+  Enabled: false
+
+  # 明示的に else で nil を返すのは分かりやすいので許可する
+Style/EmptyElse:
+  EnforcedStyle: empty
+
